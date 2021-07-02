@@ -13,7 +13,7 @@ Game.market.deal = function(orderId: string, amount: number, targetRoomName?: st
 	return response;
 };
 
-// Replaces deprecated function with same functionality to remove warnings and ensure funcationality
+/ Replaces deprecated function with same functionality to remove warnings and ensure funcationality
 Game.map.isRoomAvailable = function(roomName: string): boolean {
 	const response = Game.map.getRoomStatus(roomName).status;
 	if (response == "closed") {
