@@ -156,7 +156,7 @@ export class DirectiveInvasionDefense extends Directive {
 			if (_.filter(this.room.creeps, creep => creep.hits < creep.hitsMax).length == 0) {
 				this.remove();
 			}
-		} else if ((Game.time - this.memory.safeSince) > 3000) {
+		} else if ((Game.time - this.memory.safeSince) > 6000) {
 			this.remove();
 		}
 	}
