@@ -14,10 +14,15 @@ Game.market.deal = function(orderId: string, amount: number, targetRoomName?: st
 };
 
 // Replaces deprecated function with same functionality to remove warnings and ensure funcationality
-Game.map.isRoomAvailable = function(roomName: string): boolean {
+Game.map.isRoomReachable = function(roomName: string): boolean {
 	const response = Game.map.getRoomStatus(roomName).status;
 	if (response == "closed") {
-		return false
+		return false;
+	}
+	const spawn = Game.spawns[1];
+	const spawnRoomStatus = Game.map.getRoomStatus(spawn.room.name).status;
+	if ((response != spawnRoomStatus) && ((roomName.charAt(1) != '0') || (roomName.charAt(2) != '0') || (roomName.charAt(4) != '0') || (roomName.charAt(5) != '0'))) {
+		return false;
 	}
 	return true;
 }

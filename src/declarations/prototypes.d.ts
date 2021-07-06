@@ -298,3 +298,9 @@ interface Number {
 
 	truncate(decimals: number): number;
 }
+
+interface GameMap {
+	
+	isRoomReachable(roomName: string): boolean
+	
+}
