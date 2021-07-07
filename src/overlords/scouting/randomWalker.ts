@@ -35,7 +35,7 @@ export class RandomWalkerScoutOverlord extends Overlord {
 		// Check if room might be connected to newbie/respawn zone
 		const neighboringRooms = _.values(Game.map.describeExits(scout.pos.roomName)) as string[];
 		const roomName = _.sample(neighboringRooms);
-		if (Game.map.isRoomReachable(roomName)) {
+		if (Game.map.isRoomAvailable(roomName)) {
 			scout.task = Tasks.goToRoom(roomName);
 		}
 	}

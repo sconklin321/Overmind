@@ -301,6 +301,6 @@ interface Number {
 
 interface GameMap {
 	
-	isRoomReachable(roomName: string): boolean
+	isRoomAvailable(roomName: string): boolean
 	
 }

@@ -123,7 +123,7 @@ export class ExpansionPlanner implements IExpansionPlanner {
 					}
 				}
 				// Update best choices
-				if (score > bestScore && Game.map.isRoomReachable(roomName)) {
+				if (score > bestScore && Game.map.isRoomAvailable(roomName)) {
 					bestScore = score;
 					bestRoom = roomName;
 				}
